@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-forest-deep: #003B24;
+  --color-forest-dark: #002719;
+  --color-forest-darkest: #00170e;
+  --color-gold-lux: #D4AF37;
+  --color-gold-bright: #F5C542;
+  --color-cream: #FFF8E7;
+  --color-cream-soft: #F4ECE1;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-forest-dark);
+    color: var(--color-cream);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-brand-title {
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    letter-spacing: 0.12em;
+  }
+}
+
+@layer utilities {
+  /* Luxury Gold Metallic Text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #FBF3D5 0%, #F5C542 30%, #D4AF37 60%, #AA820A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gold-shimmer {
+    background: linear-gradient(90deg, #D4AF37 0%, #FFF8E7 25%, #F5C542 50%, #FFF8E7 75%, #D4AF37 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldShimmer 4s linear infinite;
+  }
+
+  /* Gold Borders & Accents */
+  .border-gold-subtle {
+    border-color: rgba(212, 175, 55, 0.25);
+  }
+
+  .border-gold-glow {
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15), inset 0 0 15px rgba(212, 175, 55, 0.05);
+  }
+
+  /* Glassmorphism Dark Ayurvedic */
+  .glass-forest {
+    background: rgba(0, 39, 25, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+  }
+
+  .glass-forest-card {
+    background: linear-gradient(135deg, rgba(0, 59, 36, 0.5) 0%, rgba(0, 39, 25, 0.75) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Glow Filters */
+  .glow-gold-lg {
+    filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.35));
+  }
+
+  .glow-gold-sm {
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.25));
+  }
+}
+
+@keyframes goldShimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #001d12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #004d2f;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
